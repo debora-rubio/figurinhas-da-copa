@@ -78,8 +78,13 @@ class Album:
 
  
  
-    def ver_porcentagem_concluida(self):
-        pass
+    def ver_porcentagem_concluida(self):                                # quantas figurinhas únicas tem no álbum.
+
+        porcentagem = (self.quantidade / self.total_album) * 100        # o total do álbum, que no caso é 500.
+
+        print("Porcentagem concluída do álbum:", porcentagem, "%")     # Exemplo: 50 figurinhas únicas de 500 = 10%
+
+        return porcentagem
 
 
 
