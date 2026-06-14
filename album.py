@@ -40,9 +40,48 @@ class Album:
         print("Figurinha inserida no álbum.")
 
 
-
+    
     def remover(self, id):
-        pass    # pass significa: vou implementar isso depois.
+
+        if self.inicio is None:                      # Se não existir nenhuma figurinha, album vazio.                      
+
+            print("O álbum está vazio.")
+
+            return
+
+                                                      # Caso a figurinha esteja logo no início da lista
+        if self.inicio.dado.id == id:                 # Remove o primeiro nó.
+
+            self.inicio = self.inicio.proximo
+
+            self.quantidade -= 1
+
+            print("Figurinha removida com sucesso.")
+
+            return
+
+        anterior = self.inicio
+
+        atual = self.inicio.proximo
+
+        while atual is not None:         # percorre a lista nó por nó, procurando a figurinha com o ID especificado.
+
+            if atual.dado.id == id:
+
+                anterior.proximo = atual.proximo
+
+                self.quantidade -= 1                              # Atualiza a quantidade de figurinhas.
+
+                print("Figurinha removida com sucesso.")
+
+                return
+
+            anterior = atual
+
+            atual = atual.proximo
+
+        print("Figurinha não encontrada.")
+    
 
 
 
