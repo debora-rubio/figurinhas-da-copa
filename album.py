@@ -15,7 +15,6 @@ class Album:
         pass
 
     def consultar(self, id):
-
         atual = self.inicio
 
         while atual is not None:
@@ -31,4 +30,13 @@ class Album:
         pass
 
     def ver_porcentagem_concluida(self):
+        pass
+
+    def armazenar_repetida(self, figurinha):
+        pass
+
+    def mostrar_repetidas(self):
+        pass
+
+    def contar_repetidas(self):
         pass
