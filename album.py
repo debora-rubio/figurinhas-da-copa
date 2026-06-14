@@ -1,6 +1,5 @@
 from nodo import Nodo
 
-
 class Album:
 
     def __init__(self):
@@ -10,13 +9,23 @@ class Album:
         self.total_album = 500 # Quantidade total de figurinhas necessárias para completar o álbum.
 
     def inserir(self, figurinha):
-        pass
+        pass    # pass significa: vou implementar isso depois.
 
     def remover(self, id):
         pass
 
     def consultar(self, id):
-        pass
+
+        atual = self.inicio
+
+        while atual is not None:
+
+            if atual.dado.id == id:
+                return atual.dado
+
+            atual = atual.proximo
+
+        return None
 
     def ver_album_completo(self):
         pass
