@@ -62,19 +62,19 @@ class Album:
 
     def ver_album_completo(self):    
 
-    if self.inicio is None:                      # verifica se o álbum está vazio.
-        print("O álbum está vazio.")
-        return
+        if self.inicio is None:                      # verifica se o álbum está vazio.
+            print("O álbum está vazio.")
+            return
 
-    atual = self.inicio                          # começa na primeira figurinha.
+        atual = self.inicio                          # começa na primeira figurinha.
 
-    while atual is not None:             # percorre toda a lista encadeada.
+        while atual is not None:             # percorre toda a lista encadeada.
 
-        atual.dado.exibir()              # mostra os dados da figurinha.
+            atual.dado.exibir()              # mostra os dados da figurinha.
 
-        print("------------------------")
+            print("------------------------")
 
-        atual = atual.proximo             # vai para o próximo nó.
+            atual = atual.proximo             # vai para o próximo nó.
 
  
  
