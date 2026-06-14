@@ -157,8 +157,21 @@ class Album:
 
 
     def mostrar_repetidas(self):
-        pass
+    
+        if self.repetidas is None:                  # Verifica se a lista de figurinhas repetidas está vazia.
+            print("Não há figurinhas repetidas.")  
+            return
 
+        atual = self.repetidas                      # Começa pela primeira repetida.
+
+        while atual is not None:                # Percorre todas as figurinhas repetidas.
+
+            atual.dado.exibir()                 # Mostra os dados da figurinha repetida.
+
+            print("------------------------")
+
+            atual = atual.proximo                # Vai para o próximo nó..
+        
 
 
     def contar_repetidas(self):
