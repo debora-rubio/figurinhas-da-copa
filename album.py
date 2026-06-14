@@ -175,4 +175,17 @@ class Album:
 
 
     def contar_repetidas(self):
-        pass
+
+        contador = 0
+
+        atual = self.repetidas
+
+        while atual is not None:
+
+            contador += atual.dado.quantidade   # contador = contador + atual.dado.quantidade
+                                                # contador, é a variável que guarda o total acumulado.
+            atual = atual.proximo               # atual é o nó que estamos visitando no momento.
+                                                # dado (atributo), é a figurinha armazenada dentro do nó.
+        print("Quantidade total de figurinhas repetidas:", contador)
+
+        return contador
