@@ -9,12 +9,40 @@ class Album:
         self.total_album = 500 # Quantidade total de figurinhas necessárias para completar o álbum.
 
     def inserir(self, figurinha):
-        pass    # pass significa: vou implementar isso depois.
+        figurinha_encontrada = self.consultar(figurinha.id) # O sistema procura por ex. o ID 10 dentro do álbum.
+
+        if figurinha_encontrada is not None:    # Se encontrou, a figurinha já existe no álbum.
+
+            self.armazenar_repetida(figurinha)  # envia para a lista de repetidas.
+
+            print("Figurinha enviada para a lista de repetidas.")
+
+            return
+
+        novo_nodo = Nodo(figurinha)    # Se não encontrou, Cria um nó da lista encadeada.
+
+        if self.inicio is None:
+
+            self.inicio = novo_nodo
+
+        else:
+
+            atual = self.inicio
+
+            while atual.proximo is not None:
+
+                atual = atual.proximo
+
+            atual.proximo = novo_nodo
+
+        self.quantidade += 1
+
+        print("Figurinha inserida no álbum.")
 
 
 
     def remover(self, id):
-        pass
+        pass    # pass significa: vou implementar isso depois.
 
 
 
