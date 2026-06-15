@@ -204,22 +204,44 @@ class Album:
 
         return None
     
-
+    
     
     def diminuir_repetida(self, id):
 
-        atual = self.repetidas
+    if self.repetidas is None:
+        print("Não há figurinhas repetidas.")
+        return
 
-        while atual is not None:
+    if self.repetidas.dado.id == id:
 
-            if atual.dado.id == id:
+        self.repetidas.dado.quantidade -= 1
 
-                atual.dado.quantidade -= 1             # quando uma troca é realizada.
-
+        if self.repetidas.dado.quantidade <= 0:
+            self.repetidas = self.repetidas.proximo
+            print("Repetida removida da lista.")
+        else:
             print("Quantidade da repetida diminuída.")
+
+        return
+
+    anterior = self.repetidas
+    atual = self.repetidas.proximo
+
+    while atual is not None:
+
+        if atual.dado.id == id:
+
+            atual.dado.quantidade -= 1
+
+            if atual.dado.quantidade <= 0:
+                anterior.proximo = atual.proximo
+                print("Repetida removida da lista.")
+            else:
+                print("Quantidade da repetida diminuída.")
 
             return
 
+        anterior = atual
         atual = atual.proximo
 
     print("Repetida não encontrada.")
