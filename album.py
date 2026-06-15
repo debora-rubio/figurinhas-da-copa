@@ -189,3 +189,37 @@ class Album:
         print("Quantidade total de figurinhas repetidas:", contador)
 
         return contador
+
+
+    def consultar_repetida(self, id):       # procura uma figurinha específica dentro da lista de repetidas.
+
+        atual = self.repetidas
+
+        while atual is not None:
+
+            if atual.dado.id == id:
+                return atual.dado
+
+            atual = atual.proximo
+
+        return None
+    
+
+    
+    def diminuir_repetida(self, id):
+
+        atual = self.repetidas
+
+        while atual is not None:
+
+            if atual.dado.id == id:
+
+                atual.dado.quantidade -= 1             # quando uma troca é realizada.
+
+            print("Quantidade da repetida diminuída.")
+
+            return
+
+        atual = atual.proximo
+
+    print("Repetida não encontrada.")
