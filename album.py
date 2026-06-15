@@ -206,6 +206,7 @@ class Album:
     
     
     
+    
     def diminuir_repetida(self, id):
 
     if self.repetidas is None:
