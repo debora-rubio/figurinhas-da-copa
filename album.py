@@ -198,51 +198,53 @@ class Album:
         while atual is not None:
 
             if atual.dado.id == id:
-                return atual.dado
+             return atual.dado
 
             atual = atual.proximo
 
         return None
     
-    
+
     
     
     def diminuir_repetida(self, id):
 
-    if self.repetidas is None:
-        print("Não há figurinhas repetidas.")
-        return
+        if self.repetidas is None:
+            print("Não há figurinhas repetidas.")
+            return
 
-    if self.repetidas.dado.id == id:
+        if self.repetidas.dado.id == id:
 
-        self.repetidas.dado.quantidade -= 1
+            self.repetidas.dado.quantidade -= 1
 
-        if self.repetidas.dado.quantidade <= 0:
-            self.repetidas = self.repetidas.proximo
-            print("Repetida removida da lista.")
-        else:
-            print("Quantidade da repetida diminuída.")
-
-        return
-
-    anterior = self.repetidas
-    atual = self.repetidas.proximo
-
-    while atual is not None:
-
-        if atual.dado.id == id:
-
-            atual.dado.quantidade -= 1
-
-            if atual.dado.quantidade <= 0:
-                anterior.proximo = atual.proximo
+            if self.repetidas.dado.quantidade <= 0:
+                self.repetidas = self.repetidas.proximo
                 print("Repetida removida da lista.")
+
             else:
                 print("Quantidade da repetida diminuída.")
 
             return
 
-        anterior = atual
-        atual = atual.proximo
+        anterior = self.repetidas
+        atual = self.repetidas.proximo
 
-    print("Repetida não encontrada.")
+        while atual is not None:
+
+            if atual.dado.id == id:
+
+                atual.dado.quantidade -= 1
+
+                if atual.dado.quantidade <= 0:
+                    anterior.proximo = atual.proximo
+                    print("Repetida removida da lista.")
+
+                else:
+                    print("Quantidade da repetida diminuída.")
+
+                return
+
+            anterior = atual
+            atual = atual.proximo
+
+        print("Repetida não encontrada.")
