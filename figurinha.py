@@ -11,7 +11,15 @@ class Figurinha:
         # quantidade de cópias da figurinha
         self.quantidade = 1
 
+
     def exibir(self):
+        print("ID:", self.id)
+        print("Nome:", self.nome)
+        print("País:", self.pais)
+        print("Posição:", self.posicao)
+        print("Raridade:", self.raridade)
+
+    def exibir_repetida(self):
         print("ID:", self.id)
         print("Nome:", self.nome)
         print("País:", self.pais)
