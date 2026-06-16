@@ -283,4 +283,34 @@ class Album:
         if encontrou == False:
             print("Nenhuma figurinha encontrada desse país.")
 
-     
+    def salvar_txt(self, nome_arquivo):
+
+        arquivo = open(nome_arquivo, "w")
+
+        atual = self.inicio
+
+        while atual is not None:
+
+            figurinha = atual.dado
+
+            linha = (
+                str(figurinha.id) + ";" +
+                figurinha.nome + ";" +
+                figurinha.pais + ";" +
+                figurinha.posicao + ";" +
+                figurinha.raridade + "\n"
+            )
+
+            arquivo.write(linha)
+
+            atual = atual.proximo
+
+        arquivo.close()
+
+        print("Álbum salvo com sucesso.")
+    
+
+    def carregar_txt(self, nome_arquivo):
+
+        print("Método carregar_txt ainda será implementado.")
+   
