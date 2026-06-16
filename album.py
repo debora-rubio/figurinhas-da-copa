@@ -261,7 +261,7 @@ class Album:
                 print("------------------------")
                 encontrou = True
 
-        atual = atual.proximo
+            atual = atual.proximo
 
         if encontrou == False:
             print("Nenhuma figurinha encontrada com esse nome.")
@@ -278,12 +278,9 @@ class Album:
                 print("------------------------")
                 encontrou = True
 
-        atual = atual.proximo
+            atual = atual.proximo
 
         if encontrou == False:
             print("Nenhuma figurinha encontrada desse país.")
 
-        atual = atual.proximo
-
-        if encontrou == False:
-            print("Nenhuma figurinha encontrada desse país.")
+     
