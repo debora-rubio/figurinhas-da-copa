@@ -1,4 +1,5 @@
 from nodo import Nodo
+from figurinha import Figurinha
 
 class Album:
 
@@ -308,9 +309,31 @@ class Album:
         arquivo.close()
 
         print("Álbum salvo com sucesso.")
-    
+
+
+
 
     def carregar_txt(self, nome_arquivo):
 
-        print("Método carregar_txt ainda será implementado.")
+        arquivo = open(nome_arquivo, "r")
+
+        for linha in arquivo:
+
+            dados = linha.strip().split(";")
+
+            id = int(dados[0])
+            nome = dados[1]
+            pais = dados[2]
+            posicao = dados[3]
+            raridade = dados[4]
+
+            figurinha = Figurinha(id, nome, pais, posicao, raridade)
+
+            self.inserir(figurinha)
+
+        arquivo.close()
+
+        print("Álbum carregado com sucesso.")
+    
+
    

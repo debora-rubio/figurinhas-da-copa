@@ -1,0 +1,3 @@
+1;Messi;Argentina;Atacante;Rara
+2;Cristiano Ronaldo;Portugal;Atacante;Rara
+3;MBape;França;Atacante;Rara
