@@ -39,9 +39,9 @@ def mostrar_menu():
     print("9 - Buscar por país/seleção")
     print("10 - Registrar proposta de troca")
     print("11 - Efetuar troca automática")
+    print("12 - Salvar dados em TXT")
+    print("13 - Carregar dados do TXT")
     print("0 - Sair")
-
-
 
 
 opcao = -1
@@ -77,6 +77,7 @@ while opcao != 0:
 
             album_escolhido.inserir(figurinha)
 
+
     elif opcao == 2:
 
         album_escolhido = escolher_album()
@@ -90,6 +91,8 @@ while opcao != 0:
                 continue
 
             album_escolhido.remover(id)
+
+
 
     elif opcao == 3:
 
@@ -110,12 +113,15 @@ while opcao != 0:
             else:
                 print("Figurinha não encontrada.")
 
+
+
     elif opcao == 4:
 
         album_escolhido = escolher_album()
 
         if album_escolhido is not None:
             album_escolhido.ver_album_completo()
+
 
     elif opcao == 5:
 
@@ -124,6 +130,7 @@ while opcao != 0:
         if album_escolhido is not None:
             album_escolhido.ver_porcentagem_concluida()
 
+
     elif opcao == 6:
 
         album_escolhido = escolher_album()
@@ -131,12 +138,14 @@ while opcao != 0:
         if album_escolhido is not None:
             album_escolhido.mostrar_repetidas()
 
+
     elif opcao == 7:
 
         album_escolhido = escolher_album()
 
         if album_escolhido is not None:
             album_escolhido.contar_repetidas()
+
 
     elif opcao == 8:
 
@@ -148,6 +157,7 @@ while opcao != 0:
 
             album_escolhido.buscar_por_nome(nome)
 
+
     elif opcao == 9:
 
         album_escolhido = escolher_album()
@@ -157,6 +167,7 @@ while opcao != 0:
             pais = input("Digite o país/seleção: ")
 
             album_escolhido.buscar_por_pais(pais)
+
 
     elif opcao == 10:
 
@@ -169,9 +180,36 @@ while opcao != 0:
 
         historico.registrar_proposta("Maria", id_maria, "João", id_joao)
 
+        
+
     elif opcao == 11:
 
         historico.efetuar_troca_automatica(album_maria, album_joao)
+
+    
+
+    elif opcao == 12:
+
+        album_escolhido = escolher_album()
+
+        if album_escolhido is not None:
+
+            nome_arquivo = input("Digite o nome do arquivo TXT: ")
+
+            album_escolhido.salvar_txt(nome_arquivo)
+
+
+
+    elif opcao == 13:
+
+        album_escolhido = escolher_album()
+
+        if album_escolhido is not None:
+
+            nome_arquivo = input("Digite o nome do arquivo TXT: ")
+
+            album_escolhido.carregar_txt(nome_arquivo)
+
 
     elif opcao == 0:
 
