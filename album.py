@@ -204,7 +204,6 @@ class Album:
 
         return None
     
-
     
     
     def diminuir_repetida(self, id):
@@ -248,3 +247,43 @@ class Album:
             atual = atual.proximo
 
         print("Repetida não encontrada.")
+
+
+    def buscar_por_nome(self, nome):
+
+        atual = self.inicio
+        encontrou = False
+
+        while atual is not None:
+
+            if atual.dado.nome.lower() == nome.lower():
+                atual.dado.exibir()
+                print("------------------------")
+                encontrou = True
+
+            atual = atual.proximo
+
+        if encontrou == False:
+            print("Nenhuma figurinha encontrada com esse nome.")
+    
+    def buscar_por_pais(self, pais):
+
+        atual = self.inicio
+        encontrou = False
+
+        while atual is not None:
+
+            if atual.dado.pais.lower() == pais.lower():
+                atual.dado.exibir()
+                print("------------------------")
+                encontrou = True
+
+            atual = atual.proximo
+
+        if encontrou == False:
+            print("Nenhuma figurinha encontrada desse país.")
+
+            atual = atual.proximo
+
+        if encontrou == False:
+            print("Nenhuma figurinha encontrada desse país.")
